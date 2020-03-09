@@ -1,0 +1,25 @@
+<html>
+<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+<body>
+<button id="sub" value="shabi">shabi</button>
+</body>
+<script type="text/javascript">
+$("#sub").click(function(){
+	var tieziID  = '4858743306983920654';
+	console.log(tieziID.toString())
+	//9021363558139672000
+	$.ajax({
+		type:'GET',
+		url:"http://127.0.0.1:5000/read_tiezi",
+		data:{"tieziID":tieziID.toString()},
+		dataType:'json',
+		contentType:'application/json;charset=UTF-8',
+		success:function(data) {
+			console.log(data);
+		},
+		error:function(xhr, type) {
+	}
+});
+		})
+	</script>
+	</html>
